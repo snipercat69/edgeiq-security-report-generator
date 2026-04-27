@@ -1,0 +1,44 @@
+{
+  "version": "1.0.0",
+  "report_title": "Monthly Security Report",
+  "scan_input_dir": "./input/scans",
+  "targets": [
+    "https://example.com",
+    "https://testsite.io"
+  ],
+  "output": {
+    "path": "./output",
+    "filename_template": "security_report_{date}.{format}"
+  },
+  "delivery": {
+    "smtp": {
+      "enabled": false,
+      "host": "smtp.gmail.com",
+      "port": 587,
+      "username": "your@email.com",
+      "password": "your_app_password",
+      "from": "security@edgeiq.io",
+      "to": ["recipient@example.com"],
+      "attachments": true
+    },
+    "telegram": {
+      "enabled": false,
+      "bot_token": "your_bot_token_here",
+      "chat_id": "@your_channel"
+    }
+  },
+  "edgeiq_tools": {
+    "xss_scanner": "",
+    "network_scanner": "",
+    "ssl_watcher": "",
+    "alerting_system": ""
+  },
+  "rate_limit": {
+    "throttle_ms": 1000
+  },
+  "branding": {
+    "enabled": true,
+    "company_name": "EdgeIQ Labs",
+    "logo_url": ""
+  }
+}
